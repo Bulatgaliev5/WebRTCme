@@ -5,7 +5,9 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
-RUN dotnet publish WebRTCme/WebRTCme.Connection/Signaling/WebRTCme.Connection.Signaling.Server/WebRTCme.Connection.Signaling.Server.csproj -c Release -o /app/publish
+
+RUN dotnet publish src/WebRTCme.Connection/Signaling/WebRTCme.Connection.Signaling.Server/WebRTCme.Connection.Signaling.Server.csproj \
+    -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
