@@ -7,7 +7,7 @@ WORKDIR /src
 COPY . .
 
 RUN dotnet publish WebRTCme.Connection/Signaling/WebRTCme.Connection.Signaling.Server/WebRTCme.Connection.Signaling.Server.csproj \
-    -c Release -o /app/publish
+    --no-dependencies -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
