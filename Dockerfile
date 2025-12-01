@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY . .
 
-RUN dotnet publish src/WebRTCme.Connection/Signaling/WebRTCme.Connection.Signaling.Server/WebRTCme.Connection.Signaling.Server.csproj \
+RUN dotnet publish WebRTCme.Connection/Signaling/WebRTCme.Connection.Signaling.Server/WebRTCme.Connection.Signaling.Server.csproj \
     -c Release -o /app/publish
 
 FROM base AS final
