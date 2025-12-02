@@ -52,7 +52,7 @@ public static class MauiProgram
             handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
             {
                 // Разрешаем для локального IP
-                if (cert != null && cert.Issuer.Contains("192.168.0.114"))
+                if (cert != null && cert.Issuer.Contains("http://37.252.23.169:5053"))
                     return true;
                 return errors == System.Net.Security.SslPolicyErrors.None;
             };
